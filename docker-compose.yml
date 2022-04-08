@@ -39,7 +39,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
-      #- ./mysql/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
+      - ./mysql/database:/var/lib/mysql
     networks:
       - app-network
 
