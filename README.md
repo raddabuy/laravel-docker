@@ -25,6 +25,7 @@ docker-compose exec nginx chmod 777 /var/www/public
 7. docker-compose exec app php artisan migrate
 
 Если при работе с БД перестает что-то работать, то перезапускает контейнеры либо очищаем кэш
-docker-compose exec app php artisan config:cache
+docker-compose exec app php artisan config:cache, docker-compose exec app php artisan config:clear, 
+docker-compose exec app php artisan cache:clear
 
 Готово! 
