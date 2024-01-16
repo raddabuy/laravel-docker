@@ -12,7 +12,7 @@ Docker влючает в себя сервисы app (php:7.4-fpm), nginx, mysql
 9. localhost:8000 - должна быть стартовая страница Laravel
 Если вы видете страницу nginx сервиса, то нужно проверить docker-compose logs nginx.
 В случае, если доступ к папке public будет запрещен (Permission denied), дать разрешения вручную:
-docker-compose exec nginx chmod 777 /var/www/public
+docker-compose exec nginx chmod 777 /var/www/public либо docker-compose exec app find /var/www -type d -exec chmod 0775 '{}' \;
 
 Настройка БД
 1. в adminer зайти под пользователем root и создать БД laravel
