@@ -19,12 +19,12 @@ docker-compose exec nginx chmod 777 /var/www/public либо docker-compose exec
 1. docker-compose exec db bash
 2. mysql -u root -p
 3. show databases;
-4.* GRANT ALL ON laravel.* TO 'root'@'%' IDENTIFIED BY '12345';
-5.* FLUSH PRIVILEGES;
+4. GRANT ALL ON laravel.* TO 'root'@'%' IDENTIFIED BY '12345';
+5. FLUSH PRIVILEGES;
 6. exit, exit
 7. docker-compose exec app php artisan migrate
 
-Если при работе с БД перестает что-то работать, то перезапускает контейнеры либо очищаем кэш
+Если при работе с БД перестает что-то работать, то перезапускаем контейнеры либо очищаем кэш
 docker-compose exec app php artisan config:cache, docker-compose exec app php artisan config:clear, 
 docker-compose exec app php artisan cache:clear
 
